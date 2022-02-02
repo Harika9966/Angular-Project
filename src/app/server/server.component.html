@@ -1,6 +1,10 @@
 <div class="container">
-    <p> sever component</p>
     <div class="card">
-        <p>{{ 'server' }} with Id {{ serverId}} is {{   getServerStatus() }}</p> <!--string interpolation-->
+        <p 
+        [ngStyle]="{backgroundColor:getColor()}"
+        [ngClass]="{online :  ServerStatus === 'online'}"
+         >
+         {{ 'server' }} with Id {{ serverId}} is {{   getServerStatus() }}</p> <!--string interpolation-->
     </div>
 </div>
+<hr>

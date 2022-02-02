@@ -8,9 +8,22 @@
             <app-warning-alert></app-warning-alert>
             <app-successalert></app-successalert>
             <div class="container">
-                <app-server></app-server>
-            </div>
             <app-servers></app-servers>
+            <div class="col-xs-4">
+            <button class="btn btn-primary" (click)="showSecret=!showSecret">pwdDetails</button>
+            <p *ngIf="showSecret">my secret pwd is Harika</p>
+        </div>
+        <div class="col-xs-4">
+            <button class="btn btn-primary" (click)="onToggleDetails()">DisplayDetails</button>
+            <p *ngIf="showSecret">my secret pwd is Harika</p>
+            <div *ngFor="let logItem of log"
+            [ngStyle]="{backgroundColor:logItem >= 5 ? 'blue' : 'transparent'}"
+            [ngClass]="{'white-text': logItem >=5}"
+            >{{logItem}}</div>
+            <br>
+            <br>
+        </div>
+    </div>
 </div>
 </div>
 </div>

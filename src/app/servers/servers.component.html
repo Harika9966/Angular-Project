@@ -1,12 +1,20 @@
-<p>servers works!</p>
-<app-server></app-server>
+
 <label>Server Name</label>
 <input type="text" class="form-control" (input)="onUpdateServerName($event)">
-<br>
+
 <input type="text" class="form-control" [(ngModel)]="ServerName"> <!--two way data binding-->
+
 <p>{{ ServerName }}</p>
+
 <button class="btn btn-primary" [disabled]="!allowNewServer" (click)="oncreateServer()">Add Server</button>
-<P>{{ ServerCreationStatus }}</P>
+<!--<P>{{ ServerCreationStatus }}</P>-->
+    
+<p *ngIf="servercreated; else noServer">Sever was created server Name is {{ ServerName }}</p>
+<ng-template #noServer>
+<p>No Server was created!</p></ng-template>
+
+<app-server *ngFor="let server of servers"></app-server> <!--loop-->
+
  <!-- <p>{{ allowNewServer }}</p>       string interpolation-->
  <!-- <p [innerText]="allowNewServer"></p>  Property Binding-->
 <div class="container">
@@ -19,3 +27,6 @@
        </div>
     </div>
 </div>
+<br>
+<!--<button class="btn btn-primary" (click)="showSecret=!showSecret">Display Details</button>
+<p *ngIf="showSecret">showSecret Password id harika</p>-->
