@@ -8,3 +8,13 @@
     </div>
 </div>
 <hr>
+
+<h2>Servers</h2>
+<button class="btn btn-danger" (click)="onAddServer()">server</button>
+<br><br>
+<ul class="list-group">
+    <li class="list-group-item" *ngFor="let server of servers; let i=index "
+    (click)="onRemoveServer(i)"
+    >{{ server }} </li>
+
+</ul>

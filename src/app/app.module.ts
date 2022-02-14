@@ -7,6 +7,12 @@ import { ServerComponent } from './server/server.component';
 import { ServersComponent } from './servers/servers.component';
 import { WarningAlertComponent } from './warning-alert/warning-alert.component';
 import { SuccessalertComponent } from './successalert/successalert.component';
+import { CockpitComponent } from './cockpit/cockpit.component';
+import { ServerElementComponent } from './server-element/server-element.component';
+import { GameControlComponent } from './Assignment4/game-control/game-control.component';
+import { EvenComponent } from './Assignment4/even/even.component';
+import { OddComponent } from './Assignment4/odd/odd.component';
+
 
 @NgModule({
   declarations: [
@@ -14,7 +20,12 @@ import { SuccessalertComponent } from './successalert/successalert.component';
     ServerComponent,
     ServersComponent,
     WarningAlertComponent,
-    SuccessalertComponent
+    SuccessalertComponent,
+    CockpitComponent,
+    ServerElementComponent,
+    GameControlComponent,
+    EvenComponent,
+    OddComponent,
   ],
   imports: [
     BrowserModule,

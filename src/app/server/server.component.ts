@@ -10,6 +10,10 @@ export class ServerComponent{
     //assigning values
     serverId:Number=10;
     ServerStatus:string='offline';
+    servers = [''];
+    onAddServer(){
+        this.servers.push( 'Another Server');
+      }
     constructor()
     {
         this.ServerStatus = Math.random() > 0.5 ? 'online' : 'offline';
@@ -22,5 +26,10 @@ export class ServerComponent{
     }
     getColor(){
         return this.ServerStatus === 'online' ? 'green' : 'red ';
+    }
+    onRemoveServer(id:number){
+        const Position =id +1
+        this.servers.splice(Position,1)
+
     }
 }
