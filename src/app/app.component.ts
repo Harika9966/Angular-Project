@@ -1,9 +1,13 @@
 import { Component } from '@angular/core';
+import { AccountsService } from './account/accounts.service';
+import { UserService } from './Assignment5/user.services';
+
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  providers:[AccountsService,UserService]
 })
 export class AppComponent {
   showSecret=false;
@@ -56,5 +60,52 @@ export class AppComponent {
       this.oddNumbers.push(firedNumber);
     }
   }
+
+  /*accounts = [
+    {
+      name: 'Master Account',
+      status: 'active'
+    },
+    {
+      name: 'Testaccount',
+      status: 'inactive'
+    },
+    {
+      name: 'Hidden Account',
+      status: 'unknown'
+    }
+  ];
+
+  onAccountAdded(newAccount: {name: string, status: string}) {
+    this.accounts.push(newAccount);
+  }
+
+  onStatusChanged(updateInfo: {id: number, newStatus: string}) {
+    this.accounts[updateInfo.id].status = updateInfo.newStatus;
+  }*/
+  
+  //dataservice
+  accounts:{name:string,status:string}[]=[];
+
+  constructor(private accountsService:AccountsService){}
+  
+  ngOnInit(){
+    this.accounts = this.accountsService.accounts;
+  }
+
+  //Assignment5
+
+ /* activeUsers = ['Max', 'Anna'];
+  inactiveUsers = ['Chris', 'Manu'];
+
+  onSetToInactive(id: number) {
+    this.inactiveUsers.push(this.activeUsers[id]);
+    this.activeUsers.splice(id, 1);
+  }
+
+  onSetToActive(id: number) {
+    this.activeUsers.push(this.inactiveUsers[id]);
+    this.inactiveUsers.splice(id, 1);
+  }*/
    
 }

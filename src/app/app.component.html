@@ -25,8 +25,6 @@
         </div>
     </div>
 </div>
-</div>
-</div>
 <hr>
 <div class="container">
     <app-cockpit 
@@ -74,4 +72,43 @@
     <div class="col-md-12">
         <app-directives></app-directives>
     </div>
+</div>
+<!--services-->
+<h3>services</h3>
+<div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-md-8">
+       <!-- <app-new-account (accountAdded)="onAccountAdded($event)"></app-new-account>-->
+        <app-new-account></app-new-account>
+        <hr>
+       <!-- <app-account
+          *ngFor="let acc of accounts; let i = index"
+          [account]="acc"
+          [id]="i"
+          (statusChanged)="onStatusChanged($event)"></app-account>-->
+          <app-account
+          *ngFor="let acc of accounts; let i = index"
+          [account]="acc"
+          [id]="i"
+         ></app-account>
+      </div>
+    </div>
+  </div>
+  <h3>ASSIGNMENT5</h3>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-md-8">
+        <!-- <app-active-users
+          [users]="activeUsers"
+          (userSetToInactive)="onSetToInactive($event)"></app-active-users>
+        <app-inactive-users
+          [users]="inactiveUsers"
+          (userSetToActive)="onSetToActive($event)"></app-inactive-users>-->
+          <app-active-users></app-active-users>
+          <app-inactive-users></app-inactive-users>
+      </div>
+    </div>
+  </div>
+  
+</div>
 </div>
