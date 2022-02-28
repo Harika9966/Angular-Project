@@ -1,0 +1,24 @@
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { ServersService } from './servers.service';
+
+
+@Component({
+  selector: 'app-routerservers',
+  templateUrl: './routerservers.component.html',
+  styleUrls: ['./routerservers.component.css']
+})
+export class RouterserversComponent implements OnInit {
+  public servers: {id: number, name: string, status: string}[] = [];
+
+  constructor(private serversService: ServersService,private router:Router,private route:ActivatedRoute) { }
+
+  ngOnInit(): void {
+    this.servers = this.serversService.getServers();
+  }
+  onReload(){
+  // this.router.navigate(['routerservers'],{relativeTo:this.route});
+
+  }
+
+}

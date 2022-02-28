@@ -23,6 +23,20 @@ import { LoggingService } from './account/logging.service';
 import { ActiveUsersComponent } from './Assignment5/active-users/active-users.component';
 import { InactiveUsersComponent } from './Assignment5/Inactive-users/inactive-users.component';
 import { CounterService } from './Assignment5/counter.service';
+import { UsersComponent } from './Router/users/users.component';
+import { HomeComponent } from './Router/home/home.component';
+import { UserComponent } from './Router/users/user/user.component';
+import { RouterserversComponent } from './Router/routerservers/routerservers.component';
+import { EditServerComponent } from './Router/routerservers/edit-server/edit-server.component';
+import { RouterserverComponent } from './Router/routerservers/routerserver/routerserver.component';
+import { ServersService } from './Router/routerservers/servers.service';
+import { PageNotFoundComponent } from './Router/page-not-found/page-not-found.component';
+import { AppRoutingModule } from './app-routing.module';
+import { AuthService } from './auth.service';
+import { AuthGuard } from './auth-guard.service';
+import { CanDeactivateGuard } from './Router/routerservers/edit-server/can-deactivate-guard.service';
+import { ErrorPageComponent } from './Router/error-page/error-page.component';
+
 
 
 
@@ -45,16 +59,28 @@ import { CounterService } from './Assignment5/counter.service';
     AccountComponent,
     NewAccountComponent,
     ActiveUsersComponent,
-    InactiveUsersComponent
+    InactiveUsersComponent,
+    HomeComponent,
+    UsersComponent,
+    UserComponent,
+    RouterserversComponent,
+    EditServerComponent,
+    RouterserverComponent,
+    PageNotFoundComponent,
+    ErrorPageComponent,
+  
+    
+  
 
 
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
     
   ],
-  providers: [AccountsService,LoggingService,CounterService],
+  providers: [AccountsService,LoggingService,CounterService,ServersService,AuthService,AuthGuard,CanDeactivateGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
