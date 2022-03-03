@@ -36,6 +36,8 @@ import { AuthService } from './auth.service';
 import { AuthGuard } from './auth-guard.service';
 import { CanDeactivateGuard } from './Router/routerservers/edit-server/can-deactivate-guard.service';
 import { ErrorPageComponent } from './Router/error-page/error-page.component';
+import { ObsUserComponent } from './observables/obs-user/obs-user.component';
+import { ObsHomeComponent } from './observables/obs-home/obs-home.component';
 
 
 
@@ -68,6 +70,8 @@ import { ErrorPageComponent } from './Router/error-page/error-page.component';
     RouterserverComponent,
     PageNotFoundComponent,
     ErrorPageComponent,
+    ObsUserComponent,
+    ObsHomeComponent,
   
     
   

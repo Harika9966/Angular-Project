@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { AccountsService } from './account/accounts.service';
 import { UserService } from './Assignment5/user.services';
+import { ObsUserServive } from './observables/obs-user.service';
+import { Subscription } from 'rxjs';
 
 
 @Component({
@@ -9,7 +11,7 @@ import { UserService } from './Assignment5/user.services';
   styleUrls: ['./app.component.css'],
   providers:[AccountsService,UserService]
 })
-export class AppComponent {
+export class AppComponent implements OnInit,OnDestroy{
   showSecret=false;
   title = 'my angular-app';
   log = [0];
@@ -87,10 +89,23 @@ export class AppComponent {
   //dataservice
   accounts:{name:string,status:string}[]=[];
 
-  constructor(private accountsService:AccountsService){}
-  
+  constructor(private accountsService:AccountsService, private obsuserservice:ObsUserServive){}
+ 
+  userActivated = false;
+  private activatedSub!: Subscription;
   ngOnInit(){
     this.accounts = this.accountsService.accounts;
+     //observels obs-server
+    // this.obsuserservice.activatedEmitter.subscribe(didActivate =>{
+    //   this.userActivated=didActivate;
+      this.activatedSub=this.obsuserservice.activatedEmitter.subscribe(didActivate => {
+      this.userActivated= didActivate;
+    
+   });
+  }
+  ngOnDestroy(): void {
+    this.activatedSub.unsubscribe();
+    
   }
 
   //Assignment5
@@ -107,5 +122,6 @@ export class AppComponent {
     this.activeUsers.push(this.inactiveUsers[id]);
     this.inactiveUsers.splice(id, 1);
   }*/
-   
+
+
 }

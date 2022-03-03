@@ -1,6 +1,8 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { AuthGuard } from "./auth-guard.service";
+import { ObsHomeComponent } from "./observables/obs-home/obs-home.component";
+import { ObsUserComponent } from "./observables/obs-user/obs-user.component";
 import { ErrorPageComponent } from "./Router/error-page/error-page.component";
 
 import { HomeComponent } from "./Router/home/home.component";
@@ -27,7 +29,10 @@ const appRoutes: Routes =[
       {path:':id' , component:RouterserverComponent,resolve: {server: ServerResolver}},
       {path:':id/edit' , component:EditServerComponent,canActivate:[CanDeactivateGuard]},
     ]},
-    { path: 'not-found', component: ErrorPageComponent, data: {message: 'Page not found!'} },
+
+    {path:'obs-home',component:ObsHomeComponent},
+    {path:'obs-user/:id', component:ObsUserComponent},
+   // { path: 'not-found', component: ErrorPageComponent, data: {message: 'Page not found!'} },
     //{path:'not-found', component:PageNotFoundComponent},
     {path:'**', redirectTo:'/not-found'}
   ];
