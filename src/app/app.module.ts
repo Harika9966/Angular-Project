@@ -38,6 +38,8 @@ import { CanDeactivateGuard } from './Router/routerservers/edit-server/can-deact
 import { ErrorPageComponent } from './Router/error-page/error-page.component';
 import { ObsUserComponent } from './observables/obs-user/obs-user.component';
 import { ObsHomeComponent } from './observables/obs-home/obs-home.component';
+import { FormComponent } from './Forms/form/form.component';
+import { TdFormComponent } from './Assignment6/td-form/td-form.component';
 
 
 
@@ -72,6 +74,8 @@ import { ObsHomeComponent } from './observables/obs-home/obs-home.component';
     ErrorPageComponent,
     ObsUserComponent,
     ObsHomeComponent,
+    FormComponent,
+    TdFormComponent,
   
     
   
