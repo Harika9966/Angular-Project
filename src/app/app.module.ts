@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { ServerComponent } from './server/server.component';
@@ -40,6 +40,8 @@ import { ObsUserComponent } from './observables/obs-user/obs-user.component';
 import { ObsHomeComponent } from './observables/obs-home/obs-home.component';
 import { FormComponent } from './Forms/form/form.component';
 import { TdFormComponent } from './Assignment6/td-form/td-form.component';
+import { UserformComponent } from './Reactive-form/userform/userform.component';
+import { ReactFormComponent } from './Assignment7/react-form/react-form.component';
 
 
 
@@ -76,6 +78,8 @@ import { TdFormComponent } from './Assignment6/td-form/td-form.component';
     ObsHomeComponent,
     FormComponent,
     TdFormComponent,
+    UserformComponent,
+    ReactFormComponent,
   
     
   
@@ -85,7 +89,8 @@ import { TdFormComponent } from './Assignment6/td-form/td-form.component';
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
     
   ],
   providers: [AccountsService,LoggingService,CounterService,ServersService,AuthService,AuthGuard,CanDeactivateGuard],
