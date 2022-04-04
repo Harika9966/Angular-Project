@@ -42,6 +42,14 @@ import { FormComponent } from './Forms/form/form.component';
 import { TdFormComponent } from './Assignment6/td-form/td-form.component';
 import { UserformComponent } from './Reactive-form/userform/userform.component';
 import { ReactFormComponent } from './Assignment7/react-form/react-form.component';
+import { PipesComponent } from './pipes/pipes.component';
+import { ShortenPipe } from './pipes/shorten.pipe';
+import { FilterPipe } from './pipes/filter.pipe';
+import { ReversePipe } from './pipes/reverse.pipe';
+import { SortPipe } from './pipes/sort.pipe';
+import { HTTPRequestComponent } from './httprequest/httprequest.component';
+import { HttpClientModule } from '@angular/common/http'
+
 
 
 
@@ -80,6 +88,14 @@ import { ReactFormComponent } from './Assignment7/react-form/react-form.componen
     TdFormComponent,
     UserformComponent,
     ReactFormComponent,
+    PipesComponent,
+    ShortenPipe,
+    FilterPipe,
+    ReversePipe,
+    SortPipe,
+    HTTPRequestComponent,
+  
+  
   
     
   
@@ -90,7 +106,8 @@ import { ReactFormComponent } from './Assignment7/react-form/react-form.componen
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
     
   ],
   providers: [AccountsService,LoggingService,CounterService,ServersService,AuthService,AuthGuard,CanDeactivateGuard],

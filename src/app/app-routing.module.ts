@@ -32,7 +32,7 @@ const appRoutes: Routes =[
 
     {path:'obs-home',component:ObsHomeComponent},
     {path:'obs-user/:id', component:ObsUserComponent},
-   // { path: 'not-found', component: ErrorPageComponent, data: {message: 'Page not found!'} },
+    //{ path: 'not-found', component: ErrorPageComponent, data: {message: 'Page not found!'} },
     //{path:'not-found', component:PageNotFoundComponent},
     {path:'**', redirectTo:'/not-found'}
   ];

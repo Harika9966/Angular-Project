@@ -4,7 +4,7 @@ import { CounterService } from './counter.service';
 
 @Injectable()
 export class UserService {
-  [x: string]: any;
+
   activeUsers = ['Max', 'Anna'];
   inactiveUsers = ['Chris', 'Manu'];
 
